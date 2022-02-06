@@ -1,6 +1,14 @@
+import path from 'path';
 const express = require('express');
 const bodyParser = require('body-parser');
-require('dotenv').config()
+
+console.log('environment    ', process.env.ENVIRONMENT)
+console.log('PORT    ', process.env.PORT)
+console.log('MONGO_CONNECTION_STRING    ', process.env.MONGO_CONNECTION_STRING)
+if(process.env.ENVIRONMENT !== 'production') {
+    require('dotenv').config()
+}
+
 
 const taskController = require('./controller/task.controller')
 
@@ -9,6 +17,7 @@ const taskController = require('./controller/task.controller')
 const app = express();
 const port = process.env.PORT || 3080;
 
+app.use(express.static(path.join(__dirname, './ui/build')));
 app.use(bodyParser.json());
 
 app.get('/api/tasks', (req, res) => {
@@ -29,7 +38,7 @@ app.delete('/api/task/:id', (req, res) => {
 });
 
 app.get('/', (req, res) => {
-    res.send(`<h1>API Works !!!</h1>`)
+    res.sendFile(path.join(__dirname, './ui/build/index.html'));
 });
 
 

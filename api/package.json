@@ -4,7 +4,7 @@
   "description": "Example Project on how to build and develop REST API with NodeJS and MongoDB",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon ./server.js localhost 3080",
+    "dev": "nodemon -L ./server.js localhost 3080",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

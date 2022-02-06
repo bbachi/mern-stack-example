@@ -23,7 +23,7 @@ services:
       context: ./api
       dockerfile: Dockerfile.dev
    ports:
-     - 3080: 3080
+     - 3080:3080
    container_name: mern-api
    networks:
      - mern-stack-net
@@ -42,10 +42,10 @@ services:
     volumes:
       - mongo-data:/data/db
 
-  networks:
-    mern-stack-net:
-      driver: bridge
+networks:
+  mern-stack-net:
+    driver: bridge
 
-  volumes:
-    mongo-data:
-      driver: local
+volumes:
+  mongo-data:
+    driver: local

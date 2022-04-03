@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "nodemon -L ./server.js localhost 3080",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "ENVIRONMENT=$ENVIRONMENT webpack"
+    "build": "ENVIRONMENT=$ENVIRONMENT webpack",
+    "prod-build": "ENVIRONMENT='production' gulp"
   },
   "repository": {
     "type": "git",
@@ -27,8 +28,13 @@
     "pine": "^1.1.1"
   },
   "devDependencies": {
+    "del": "^6.0.0",
+    "fancy-log": "^2.0.0",
+    "gulp": "^4.0.2",
+    "gulp-zip": "^5.1.0",
     "nodemon": "^2.0.7",
     "webpack": "^5.68.0",
-    "webpack-cli": "^4.9.2"
+    "webpack-cli": "^4.9.2",
+    "webpack-stream": "^7.0.0"
   }
 }

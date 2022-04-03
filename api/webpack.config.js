@@ -21,7 +21,7 @@ if (environment === 'test') {
   ENVIRONMENT_VARIABLES = {
     'process.env.ENVIRONMENT': JSON.stringify('test'),
     'process.env.PORT': JSON.stringify('3080'),
-    'process.env.MONGO_CONNECTION_STRING': JSON.stringify('mongodb+srv://Tester123:51FWAl9CFZuJe9xF@todo-cluster.dc3nz.mongodb.net/todos?retryWrites=true&w=majority')
+    'process.env.MONGO_CONNECTION_STRING': JSON.stringify('mongodb+srv://tester:Tester@123@todo-cluster.ys3cf.mongodb.net/tasks?retryWrites=true&w=majority')
   };
 }
 

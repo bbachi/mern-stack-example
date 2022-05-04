@@ -17,7 +17,7 @@ const taskController = require('./controller/task.controller')
 const app = express();
 const port = process.env.PORT || 3080;
 
-app.use(express.static(path.join(__dirname, '../ui/build')));
+app.use(express.static(path.join(__dirname, './ui/build')));
 app.use(bodyParser.json());
 
 app.get('/api/tasks', (req, res) => {
@@ -38,7 +38,7 @@ app.delete('/api/task/:id', (req, res) => {
 });
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '../ui/build/index.html'));
+    res.sendFile(path.join(__dirname, './ui/build/index.html'));
 });
 
 
